@@ -1,0 +1,6 @@
+Running:
+	run make, then run the ./mdriver to test the program
+
+Known Bugs:
+	Seg faulting:
+	There is a seg fault when running realloc
