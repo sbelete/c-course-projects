@@ -1,0 +1,39 @@
+Level 1 (Lights)
+Solution: lights.txt
+
+Idea: To put the address of lights_off into the return address of 
+getbuf
+
+-------------------------------------------------------------------------------
+Level 2 (Funding)
+
+Idea: To put the address of funding into the return address of getbuf
+then put our cookie and amount less than 25 into the right spots 
+on the stack. 
+
+-------------------------------------------------------------------------------
+Level 3 (Dory)
+Solution: dory.txt
+
+Idea: To put exploit code generated from machine code into the buffer
+then put the address of the start of the exploit code into the return
+address.
+
+Extra: exploit code
+					movl $0x331f5edf, %eax
+					push $0x0004011df
+					retq
+
+-------------------------------------------------------------------------------
+Level 4 (Nitro)
+Solution: fish.txt
+
+Idea: To pu the exploit code generated for machine code into the buffer after 
+a no-op sled (a bunch of 90s). Then put the middlish of this sled as the return
+address of the return address. This allows the code to be exectued after sliding
+down to it through the sled.
+
+Extra: exploit code
+					movl $0x331f5edf, %eax
+					push $0x00401256
+					retq

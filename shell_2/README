@@ -1,0 +1,63 @@
+Known Bugs: N/A
+
+Run:
+  Compile as usual with make
+  The either run shell_prompt or shell_no_prompt with no arguments
+    - if you do provide any arguments they will be ignored
+
+Structure:
+  1.  I took the input string and made all white spaces null.
+  2.  I then found all redirects and redirect names
+  3.  I then found the starting char of the rest of the strings
+  4.  I compared the first string to know what operation to do
+  5.  I then executed that string
+
+Notes:
+  I have pretty large buffers for the inputs by users, but I didn't
+  want there to be a constraint.
+
+  There alot of files, but it mainly was to prevent a really long shell file.
+  Also, I have all the file headers contain the function parameters and return
+  comments to reduce down on space and cleanliness in the .c files. 
+
+/*************************** CASE FOR CERTAIN TRACES NOT PASSING ********************
+Traces:
+	I passed most of the traces. The only 3 that I didn't pass are because of 
+	aggresive reaping. Causing processes not to exist compard to the expected
+	output.
+
+	These traces are:
+
+trace17.txt
+	Checking trace17.txt...
+	/course/cs033/bin/33sh/cs033_shell_2_tester: ERROR: Reference output differs from yours:
+ 	ref:(PID):zombie
+ 	tsh:(PID):doesnotexist
+
+trace18.txt
+	/course/cs033/bin/33sh/cs033_shell_2_tester: ERROR: Reference output differs from 
+	yours:
+ 	ref:(PID):zombie
+ 	tsh:(PID):doesnotexist
+
+trace20.txt 
+	Checking trace20.txt...
+	Reference output:
+	#
+	# trace20.txt - ensures that jobs terminated by SIGINT in the
+	#               background are cleaned up and have the change reported.
+	#
+	[1] (10063)
+	(10063): sleeping
+	(10063): zombie
+	[1] (10063) terminated by signal 2
+	Student's output:
+	#
+	# trace20.txt - ensures that jobs terminated by SIGINT in the
+	#               background are cleaned up and have the change reported.
+	#
+	[1] (5713)
+	(5713): sleeping
+	[1] (5713) terminated by signal 2
+	(5713): does not exist
+	Trace failed

@@ -1,0 +1,36 @@
+common.c/h
+
+The function fo common.c is to provided code that both generator.c and solver.c
+both shared. 
+
+Bugs: There are no known bugs.
+
+///////////////////////////////////////////////////////////////////////////////
+
+generator.c/h
+
+The function of generator.c is to produce a maze of some size - deterimined by
+the user. It randomly constructs this maze through the function of drunken_walk.
+The function drunken_walk calls on shuffle_array and get_neighbor to help it 
+accomlish the making part. 
+
+Once the maze is constructed, the program saves it into a file - specified by 
+the user. It will then use encode_maze to assign a hexidecimal number to every
+room sustaining the connections betwen the rooms and outer wall.
+
+Bug: There are no known bugs.
+
+///////////////////////////////////////////////////////////////////////////////
+
+solver.c/h
+
+The function loads the maze from the hexidecimal format that it was saved in.
+Once the connections are made for each room, the program then starts at a give
+location and tries to make it to the goal location.
+
+The path taken to reach the goal location is saved one of two ways: the full 
+path with all the backtracking that took place or the prunned path which is 
+a path wit no backtracking.
+
+Bug: There is no check to make sure the dimensions of the parameters passed in
+match the maze in the file.

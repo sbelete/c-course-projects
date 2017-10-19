@@ -1,0 +1,34 @@
+How to interface with the program
+
+SERVER
+	./server <port>
+
+	There is a loop for user input
+	s - stops clients from sending things
+	g - starts clients again
+	p(\0) - print binary tree in terminal
+	p txt (\n) - print binary tree into txt file
+
+	CTR-C kills all clients
+	CTR-D sends end of file thus killing the program
+
+CLIENTS
+	./client <servername> <port> [<script> <occurences>]
+
+	Formatting script or user input
+	a item - item is put into the database
+	r item - item is removed from database
+
+	CTR-C kills clients
+
+Knowledge
+	Database uses fine coarse locking to allow
+	multiple clients to edit the binary tree
+
+BUGS
+	No none bugs
+
+STUDENTS WORKED WITH
+	Robbie Petterui and Johnathon Chang
+
+
