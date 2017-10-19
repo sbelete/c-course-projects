@@ -1,7 +1,0 @@
-aa aa aa aa aa aa aa aa aa aa aa aa aa aa
-aa aa aa aa aa aa aa aa aa aa aa aa aa aa
-aa aa aa aa aa aa aa aa aa aa aa aa aa aa
-aa aa aa aa aa aa aa aa aa aa aa aa aa aa
-5c 10 40 00 00 00 00 00 00 00 00 00 00 00
-00 00 df 5e 1f 33 00 00 00 00 00 00 00 00
-00 00 00 00 19 00 
